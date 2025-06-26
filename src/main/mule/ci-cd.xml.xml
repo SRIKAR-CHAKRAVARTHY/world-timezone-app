@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="ceb54a57-e865-4559-992f-f342ffc03a13" basePath="/api/time" >
+		<http:request-connection host="timeapi.io" protocol="HTTPS"/>
+	</http:request-config>
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6b230457-99b4-4c9d-b294-506e2294893d" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="ci-cd.xmlFlow" doc:id="ceaad6d8-faba-4b19-abac-0d2e4b434d03" >
+		<http:listener doc:name="Listener" doc:id="16ed81cd-e79d-42a7-b211-1f6795b9b62e" path="/ci" config-ref="HTTP_Listener_config"/>
+		<http:request method="GET" doc:name="Request" doc:id="53cabaf1-2079-462b-85e3-7ad6f82f1c94" config-ref="HTTP_Request_configuration" path="/current/zone">
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	timeZone : attributes.queryParams.timeZone
+}]]]></http:query-params>
+		</http:request>
+	</flow>
+</mule>
