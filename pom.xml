@@ -23,7 +23,7 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+			   	<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
@@ -33,17 +33,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				<cloudHubDeployment>
-				<username>Srikar71</username>
-				<environments>Sandbox</environments>
-				<workers>1</workers>
-				<workerType>Micro</workerType>
-				<applicationName>worldtimezone-service</applicationName>
-				<password>Srikar@2004</password>
-				<muleversion>4.9.0</muleversion>
-				<objectStoreV2>true</objectStoreV2>
-				</cloudHubDeployment>
-				</configuration>
+                <cloudHubDeployment>
+                <username>Srikar71</username>
+                <password>Srikar@2004</password>
+                <environment>Sandbox</environment>
+                <workers>1</workers>
+                <workerType>Micro</workerType>
+                <applicationName>worldtimezone-service</applicationName>
+                <muleVersion>4.9.0</muleVersion>    
+                <objectStoreV2>true</objectStoreV2>
+                </cloudHubDeployment>
+                </configuration>
+				
 			</plugin>
 		</plugins>
 	</build>
