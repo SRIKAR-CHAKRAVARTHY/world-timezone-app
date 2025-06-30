@@ -37,7 +37,6 @@
                    <username>Srikar_i71</username>
                    <password>#Sherloc1129k</password>
                    <environment>Sandbox</environment>
-                   <deploymentType>cloudhub</deploymentType>
                    <workers>1</workers>
                    <workerType>Micro</workerType>
                    <applicationName>worldtimezone-service</applicationName>
