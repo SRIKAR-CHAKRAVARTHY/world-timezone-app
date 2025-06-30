@@ -41,6 +41,7 @@
 				<applicationName>worldtimezone-service</applicationName>
 				<password></password>
 				<muleversion>4.9.0</muleversion>
+				<objectStoreV2>true</objectStoreV2>
 				</cloudHubDeployment>
 				</configuration>
 			</plugin>
