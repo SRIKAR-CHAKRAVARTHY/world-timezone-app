@@ -34,17 +34,17 @@
 				<extensions>true</extensions>
 				<configuration>
                 <cloudHubDeployment>
-                <username>Srikar_i71</username>
-                <password>#Sherloc1129k</password>
-                <environment>Sandbox</environment>
-                <workers>1</workers>
-                <workerType>Micro</workerType>
-                <applicationName>worldtimezone-service</applicationName>
-                <muleVersion>4.9.0</muleVersion>    
-                <objectStoreV2>true</objectStoreV2>
-                </cloudHubDeployment>
-                </configuration>
-				
+                   <username>Srikar_i71</username>
+                   <password>#Sherloc1129k</password>
+                   <environment>Sandbox</environment>
+                   <deploymentType>cloudhub</deploymentType>
+                   <workers>1</workers>
+                   <workerType>Micro</workerType>
+                   <applicationName>worldtimezone-service</applicationName>
+                   <muleVersion>4.9.0</muleVersion>
+                   <objectStoreV2>true</objectStoreV2>
+                 </cloudHubDeployment>  
+                 </configuration>
 			</plugin>
 		</plugins>
 	</build>
